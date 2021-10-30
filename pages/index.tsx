@@ -5,6 +5,12 @@ export default function Home(
 ) {
 	return (
 		<div>
+		<p>
+			Source code at{" "}
+			<a href="https://github.com/ViliamKopecky/nextjs-vercel-middleware-env-access">
+				github.com/ViliamKopecky/nextjs-vercel-middleware-env-access
+			</a>
+		</p>
 			<pre>
 				{JSON.stringify(
 					{
