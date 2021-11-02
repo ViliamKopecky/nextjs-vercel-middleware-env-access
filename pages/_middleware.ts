@@ -1,4 +1,5 @@
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
+import { fromOtherFile } from "../utils/fromOtherFile";
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
 	console.log(req.ua, ev);
@@ -14,6 +15,7 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
 				NEXT_PUBLIC_VERCEL_UI_ENV:
 					process.env.NEXT_PUBLIC_VERCEL_UI_ENV ?? null,
 				VERCEL_UI_ENV: process.env.VERCEL_UI_ENV ?? null,
+				fromOtherFile: fromOtherFile(),
 			})
 		)}`
 	);
