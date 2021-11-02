@@ -40,7 +40,9 @@ export const getServerSideProps = async (
 			timestamp: new Date().toISOString(),
 			resolvedUrl: context.resolvedUrl,
 			url: context.req.url,
-			query: context.query ?? null,
+			query: {
+				data: JSON.parse(String(context.query?.data ?? "null")),
+			},
 			params: context.params ?? null,
 			gssr: {
 				NEXT_PUBLIC_ENV: process.env.NEXT_PUBLIC_ENV ?? null,
